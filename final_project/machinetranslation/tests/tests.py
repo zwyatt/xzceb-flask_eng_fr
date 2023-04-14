@@ -10,6 +10,10 @@ class TestTranslationMethods(unittest.TestCase):
         self.assertEqual(english_to_french('Hello'), 'Bonjour')
 
         # Null case
+        self.assertNotEqual(english_to_french('Goodbye'), None)
+        self.assertNotEqual(english_to_french('Goodbye'), '')
+
+        # Empty args case
         with self.assertRaises(TypeError):
             english_to_french()
 
@@ -22,6 +26,10 @@ class TestTranslationMethods(unittest.TestCase):
         self.assertEqual(french_to_english('Bonjour'), 'Hello')
 
         # Null case
+        self.assertNotEqual(french_to_english('Au revoir'), None)
+        self.assertNotEqual(french_to_english('Au revoir'), '')
+        
+        # Empty args case
         with self.assertRaises(TypeError):
             french_to_english()
         
