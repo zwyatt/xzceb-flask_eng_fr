@@ -7,11 +7,7 @@ from translator import english_to_french, french_to_english
 class TestTranslationMethods(unittest.TestCase):
     def test_english_to_french(self):
         # Hello -> Bonjour
-        expected_output = {
-            'translations': [{'translation': 'Bonjour'}],
-            'word_count': 1,
-            'character_count': 5}
-        self.assertEqual(english_to_french('Hello'), expected_output)
+        self.assertEqual(english_to_french('Hello'), 'Bonjour')
 
         # Null case
         with self.assertRaises(TypeError):
@@ -23,11 +19,7 @@ class TestTranslationMethods(unittest.TestCase):
 
     def test_french_to_english(self):
         # Bonjour -> Hello
-        expected_output = {
-            'translations': [{'translation': 'Hello'}],
-            'word_count': 1,
-            'character_count': 7}
-        self.assertEqual(french_to_english('Bonjour'), expected_output)
+        self.assertEqual(french_to_english('Bonjour'), 'Hello')
 
         # Null case
         with self.assertRaises(TypeError):
